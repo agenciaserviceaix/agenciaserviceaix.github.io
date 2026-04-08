@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AgenciaService — Solutions Digitales · Aix-en-Provence</title>
   <meta name="description" content="AgenciaService crée des solutions digitales sur mesure pour les entreprises d'Aix-en-Provence et de Provence. Sites web, e-commerce, présence en ligne." />
-  <meta name="theme-color" content="#100A00" />
+  <meta name="theme-color" content="#0A0A0A" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ── Three.js importmap ────────────────────────────────── -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three":          "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+      "three/addons/":  "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -17,18 +27,14 @@
 
   <canvas id="canvas"></canvas>
 
-  <!-- Logo révélé à la fin de l'animation -->
   <div id="intro-logo">
     <span class="intro-logo-main">Agencia<em>Service</em></span>
     <div class="intro-logo-trait"></div>
     <span class="intro-logo-sub">Solutions Digitales &nbsp;·&nbsp; Aix-en-Provence</span>
   </div>
 
-  <!-- Progression du chargement -->
   <div id="loading-wrap">
-    <div id="progress-track">
-      <div id="progress-bar"></div>
-    </div>
+    <div id="progress-track"><div id="progress-bar"></div></div>
     <span id="loading-label">Cours Mirabeau &nbsp;·&nbsp; Aix-en-Provence</span>
   </div>
 
@@ -53,7 +59,10 @@
   </nav>
 
   <!-- ── HERO ──────────────────────────────────────────── -->
-  <section class="hero">
+  <section class="hero" id="hero">
+    <div class="hero-canvas-wrap">
+      <canvas id="hero-canvas"></canvas>
+    </div>
     <div class="hero-inner">
       <p class="hero-eyebrow">Agence Digitale · Aix-en-Provence</p>
       <h1 class="hero-title">
@@ -71,7 +80,7 @@
   <!-- ── SERVICES ──────────────────────────────────────── -->
   <section class="services" id="services">
 
-    <div class="services-left reveal">
+    <div class="services-left">
       <p class="section-label">Nos expertises</p>
       <h2 class="section-title">Ce que nous<br><em>réalisons pour vous</em></h2>
       <p class="section-sub">
@@ -80,56 +89,51 @@
     </div>
 
     <div class="services-grid">
-
-      <div class="service-card card-reveal">
+      <div class="service-card">
         <p class="service-num">01</p>
         <h3 class="service-name">Site vitrine</h3>
         <p class="service-desc">Un site professionnel qui reflète l'identité de votre entreprise et convainc vos visiteurs dès les premières secondes. Rapide, élégant, optimisé.</p>
       </div>
-
-      <div class="service-card card-reveal">
+      <div class="service-card">
         <p class="service-num">02</p>
         <h3 class="service-name">Boutique en ligne</h3>
         <p class="service-desc">Vendez vos produits ou services 24h/24 avec une boutique claire, sécurisée et facile à gérer. Du catalogue à l'encaissement.</p>
       </div>
-
-      <div class="service-card card-reveal">
+      <div class="service-card">
         <p class="service-num">03</p>
         <h3 class="service-name">Visibilité locale</h3>
         <p class="service-desc">Référencement Google, Google Business Profile, réseaux sociaux — nous vous rendons visible là où vos clients vous cherchent, à Aix et en Provence.</p>
       </div>
-
-      <div class="service-card card-reveal">
+      <div class="service-card">
         <p class="service-num">04</p>
         <h3 class="service-name">Outils sur mesure</h3>
         <p class="service-desc">Formulaires, réservations, espaces clients, automatisations — nous construisons les outils digitaux qui font gagner du temps à votre équipe.</p>
       </div>
-
     </div>
 
   </section>
 
   <!-- ── POURQUOI NOUS ──────────────────────────────────── -->
   <section class="pourquoi">
-    <p class="section-label reveal">Notre engagement</p>
-    <h2 class="section-title reveal" style="max-width:580px;">
+    <p class="section-label">Notre engagement</p>
+    <h2 class="section-title">
       Une agence de <em>proximité</em>,<br>des résultats mesurables.
     </h2>
-    <div class="divider reveal">
+    <div class="divider">
       <span class="divider-line"></span>
       <span class="divider-diamond"></span>
       <span class="divider-line"></span>
     </div>
     <div class="chiffres">
-      <div class="chiffre-item reveal">
+      <div class="chiffre-item">
         <span class="chiffre-val">100%</span>
         <span class="chiffre-label">Sur mesure</span>
       </div>
-      <div class="chiffre-item reveal">
+      <div class="chiffre-item">
         <span class="chiffre-val">Local</span>
         <span class="chiffre-label">Basé à Aix-en-Provence</span>
       </div>
-      <div class="chiffre-item reveal">
+      <div class="chiffre-item">
         <span class="chiffre-val">Direct</span>
         <span class="chiffre-label">Interlocuteur unique</span>
       </div>
@@ -139,7 +143,7 @@
   <!-- ── À PROPOS ───────────────────────────────────────── -->
   <section class="apropos" id="apropos">
 
-    <div class="apropos-image reveal">
+    <div class="apropos-image">
       <div class="apropos-image-inner">
         <p class="apropos-image-text">
           Cours Mirabeau<br>
@@ -149,15 +153,15 @@
     </div>
 
     <div class="apropos-content">
-      <p class="section-label reveal">L'agence</p>
-      <h2 class="section-title reveal">
+      <p class="section-label">L'agence</p>
+      <h2 class="section-title">
         Enracinés à Aix,<br>
         <em>connectés au monde.</em>
       </h2>
-      <p class="section-sub reveal">
+      <p class="section-sub">
         AgenciaService est une micro-entreprise fondée à Aix-en-Provence, spécialisée dans la création de solutions digitales pour artisans, commerçants et PME.
       </p>
-      <p class="apropos-detail reveal">
+      <p class="apropos-detail">
         Nous croyons que chaque entreprise, quelle que soit sa taille, mérite une présence digitale à la hauteur de ses ambitions. Notre approche : écouter, proposer, réaliser — sans jargon, sans délais inutiles, sans mauvaises surprises.<br><br>
         Votre succès est notre seul indicateur.
       </p>
@@ -167,23 +171,23 @@
 
   <!-- ── CONTACT ────────────────────────────────────────── -->
   <section class="contact" id="contact">
-    <p class="section-label reveal">Parlons-nous</p>
-    <h2 class="section-title reveal">
+    <p class="section-label">Parlons-nous</p>
+    <h2 class="section-title">
       Votre projet commence<br><em>par une conversation.</em>
     </h2>
-    <div class="divider reveal">
+    <div class="divider">
       <span class="divider-line"></span>
       <span class="divider-diamond"></span>
       <span class="divider-line"></span>
     </div>
     <br><br>
-    <p class="section-sub reveal" style="margin: 0 auto 56px;">
+    <p class="section-sub" style="margin: 0 auto 56px;">
       Décrivez-nous votre activité et vos besoins. Nous revenons vers vous sous 24 heures avec une proposition claire.
     </p>
-    <a href="mailto:agenciaserviceaix@gmail.com" class="contact-email reveal">
+    <a href="mailto:agenciaserviceaix@gmail.com" class="contact-email">
       agenciaserviceaix@gmail.com
     </a>
-    <p class="contact-note reveal">Réponse garantie sous 24 h · Devis gratuit et sans engagement</p>
+    <p class="contact-note">Réponse garantie sous 24 h · Devis gratuit et sans engagement</p>
   </section>
 
   <!-- ── FOOTER ─────────────────────────────────────────── -->
@@ -195,11 +199,15 @@
 </div><!-- /main-content -->
 
 
-<!-- ── SCRIPTS ────────────────────────────────────────────── -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-<script src="js/scene.js"></script>
-<script src="js/main.js"></script>
+<!-- ── SCRIPTS CDN (chargés avant les modules) ────────────── -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.4/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.4/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+
+<!-- ── MODULES ES ─────────────────────────────────────────── -->
+<script type="module" src="js/scene.js"></script>
+<script type="module" src="js/hero.js"></script>
+<script type="module" src="js/main.js"></script>
 
 </body>
 </html>
