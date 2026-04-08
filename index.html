@@ -3,76 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgenciaService — Solutions Digitales à Aix-en-Provence</title>
-  <meta name="description" content="AgenciaService crée des solutions digitales sur mesure pour les entreprises. Sites web, présence en ligne, outils numériques. Basé à Aix-en-Provence." />
-  <link rel="stylesheet" href="style.css" />
+  <title>AgenciaService — Solutions Digitales · Aix-en-Provence</title>
+  <meta name="description" content="AgenciaService crée des solutions digitales sur mesure pour les entreprises d'Aix-en-Provence et de Provence. Sites web, e-commerce, présence en ligne." />
+  <meta name="theme-color" content="#100A00" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <header>
-    <nav>
-      <div class="logo">Agencia<span>Service</span></div>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#apropos">À propos</a></li>
-        <li><a href="#contact" class="btn-nav">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- ════════════════════════════════════════════════
+     INTRO — Animation 3D Cours Mirabeau
+════════════════════════════════════════════════ -->
+<div id="intro">
 
-  <!-- HERO -->
+  <canvas id="canvas"></canvas>
+
+  <!-- Logo révélé à la fin de l'animation -->
+  <div id="intro-logo">
+    <span class="intro-logo-main">Agencia<em>Service</em></span>
+    <div class="intro-logo-trait"></div>
+    <span class="intro-logo-sub">Solutions Digitales &nbsp;·&nbsp; Aix-en-Provence</span>
+  </div>
+
+  <!-- Progression du chargement -->
+  <div id="loading-wrap">
+    <div id="progress-track">
+      <div id="progress-bar"></div>
+    </div>
+    <span id="loading-label">Cours Mirabeau &nbsp;·&nbsp; Aix-en-Provence</span>
+  </div>
+
+  <button id="skip-btn">Passer l'intro</button>
+
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     CONTENU PRINCIPAL
+════════════════════════════════════════════════ -->
+<div id="main-content">
+
+  <!-- ── NAVIGATION ────────────────────────────────────── -->
+  <nav>
+    <a href="#" class="nav-logo">Agencia<em>Service</em></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#contact" class="nav-contact">Nous contacter</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Votre présence digitale,<br>construite pour durer.</h1>
-      <p>AgenciaService crée des solutions numériques sur mesure pour les entreprises qui veulent exister en ligne et se démarquer.</p>
-      <a href="#contact" class="btn-primary">Parlons de votre projet</a>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Agence Digitale · Aix-en-Provence</p>
+      <h1 class="hero-title">
+        Votre présence digitale,<br>
+        <em>construite pour durer.</em>
+      </h1>
+      <p class="hero-sub">
+        Nous créons des solutions numériques sur mesure pour les entreprises qui veulent exister en ligne avec élégance et efficacité.
+      </p>
+      <a href="#contact" class="hero-cta">Démarrer un projet</a>
     </div>
+    <div class="scroll-hint">Découvrir</div>
   </section>
 
-  <!-- SERVICES -->
+  <!-- ── SERVICES ──────────────────────────────────────── -->
   <section class="services" id="services">
-    <h2>Ce que nous faisons</h2>
-    <p class="section-sub">Des solutions simples, efficaces et adaptées à votre budget.</p>
-    <div class="cards">
-      <div class="card">
-        <div class="card-icon">🌐</div>
-        <h3>Site vitrine</h3>
-        <p>Un site professionnel pour présenter votre activité, vos services et vos coordonnées à vos clients.</p>
+
+    <div class="services-left reveal">
+      <p class="section-label">Nos expertises</p>
+      <h2 class="section-title">Ce que nous<br><em>réalisons pour vous</em></h2>
+      <p class="section-sub">
+        Des solutions simples, efficaces et adaptées à la réalité de votre activité. Pas de superflu — seulement ce qui vous fait avancer.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card card-reveal">
+        <p class="service-num">01</p>
+        <h3 class="service-name">Site vitrine</h3>
+        <p class="service-desc">Un site professionnel qui reflète l'identité de votre entreprise et convainc vos visiteurs dès les premières secondes. Rapide, élégant, optimisé.</p>
       </div>
-      <div class="card">
-        <div class="card-icon">🛒</div>
-        <h3>Site e-commerce</h3>
-        <p>Vendez vos produits ou services en ligne avec une boutique claire et facile à gérer.</p>
+
+      <div class="service-card card-reveal">
+        <p class="service-num">02</p>
+        <h3 class="service-name">Boutique en ligne</h3>
+        <p class="service-desc">Vendez vos produits ou services 24h/24 avec une boutique claire, sécurisée et facile à gérer. Du catalogue à l'encaissement.</p>
       </div>
-      <div class="card">
-        <div class="card-icon">📱</div>
-        <h3>Présence en ligne</h3>
-        <p>Référencement local, Google Business, réseaux sociaux — on vous rend visible là où vos clients vous cherchent.</p>
+
+      <div class="service-card card-reveal">
+        <p class="service-num">03</p>
+        <h3 class="service-name">Visibilité locale</h3>
+        <p class="service-desc">Référencement Google, Google Business Profile, réseaux sociaux — nous vous rendons visible là où vos clients vous cherchent, à Aix et en Provence.</p>
+      </div>
+
+      <div class="service-card card-reveal">
+        <p class="service-num">04</p>
+        <h3 class="service-name">Outils sur mesure</h3>
+        <p class="service-desc">Formulaires, réservations, espaces clients, automatisations — nous construisons les outils digitaux qui font gagner du temps à votre équipe.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ── POURQUOI NOUS ──────────────────────────────────── -->
+  <section class="pourquoi">
+    <p class="section-label reveal">Notre engagement</p>
+    <h2 class="section-title reveal" style="max-width:580px;">
+      Une agence de <em>proximité</em>,<br>des résultats mesurables.
+    </h2>
+    <div class="divider reveal">
+      <span class="divider-line"></span>
+      <span class="divider-diamond"></span>
+      <span class="divider-line"></span>
+    </div>
+    <div class="chiffres">
+      <div class="chiffre-item reveal">
+        <span class="chiffre-val">100%</span>
+        <span class="chiffre-label">Sur mesure</span>
+      </div>
+      <div class="chiffre-item reveal">
+        <span class="chiffre-val">Local</span>
+        <span class="chiffre-label">Basé à Aix-en-Provence</span>
+      </div>
+      <div class="chiffre-item reveal">
+        <span class="chiffre-val">Direct</span>
+        <span class="chiffre-label">Interlocuteur unique</span>
       </div>
     </div>
   </section>
 
-  <!-- À PROPOS -->
+  <!-- ── À PROPOS ───────────────────────────────────────── -->
   <section class="apropos" id="apropos">
-    <div class="apropos-content">
-      <h2>Basés à Aix-en-Provence,<br>au service des entreprises locales.</h2>
-      <p>AgenciaService est une micro-entreprise spécialisée dans la création de solutions digitales. Nous accompagnons artisans, commerçants et PME pour les aider à développer leur activité grâce au numérique.</p>
-      <p>Pas de grands discours : on écoute, on propose, on réalise.</p>
+
+    <div class="apropos-image reveal">
+      <div class="apropos-image-inner">
+        <p class="apropos-image-text">
+          Cours Mirabeau<br>
+          Aix-en-Provence
+        </p>
+      </div>
     </div>
+
+    <div class="apropos-content">
+      <p class="section-label reveal">L'agence</p>
+      <h2 class="section-title reveal">
+        Enracinés à Aix,<br>
+        <em>connectés au monde.</em>
+      </h2>
+      <p class="section-sub reveal">
+        AgenciaService est une micro-entreprise fondée à Aix-en-Provence, spécialisée dans la création de solutions digitales pour artisans, commerçants et PME.
+      </p>
+      <p class="apropos-detail reveal">
+        Nous croyons que chaque entreprise, quelle que soit sa taille, mérite une présence digitale à la hauteur de ses ambitions. Notre approche : écouter, proposer, réaliser — sans jargon, sans délais inutiles, sans mauvaises surprises.<br><br>
+        Votre succès est notre seul indicateur.
+      </p>
+    </div>
+
   </section>
 
-  <!-- CONTACT -->
+  <!-- ── CONTACT ────────────────────────────────────────── -->
   <section class="contact" id="contact">
-    <h2>Démarrons ensemble</h2>
-    <p>Vous avez un projet ? Une question ? Écrivez-nous.</p>
-    <a href="mailto:agenciaserviceaix@gmail.com" class="btn-primary">agenciaserviceaix@gmail.com</a>
+    <p class="section-label reveal">Parlons-nous</p>
+    <h2 class="section-title reveal">
+      Votre projet commence<br><em>par une conversation.</em>
+    </h2>
+    <div class="divider reveal">
+      <span class="divider-line"></span>
+      <span class="divider-diamond"></span>
+      <span class="divider-line"></span>
+    </div>
+    <br><br>
+    <p class="section-sub reveal" style="margin: 0 auto 56px;">
+      Décrivez-nous votre activité et vos besoins. Nous revenons vers vous sous 24 heures avec une proposition claire.
+    </p>
+    <a href="mailto:agenciaserviceaix@gmail.com" class="contact-email reveal">
+      agenciaserviceaix@gmail.com
+    </a>
+    <p class="contact-note reveal">Réponse garantie sous 24 h · Devis gratuit et sans engagement</p>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
   <footer>
-    <p>© 2026 AgenciaService — Aix-en-Provence</p>
+    <span class="footer-logo">Agencia<em>Service</em></span>
+    <span class="footer-copy">© 2026 AgenciaService · Aix-en-Provence · agenciaservice.fr</span>
   </footer>
+
+</div><!-- /main-content -->
+
+
+<!-- ── SCRIPTS ────────────────────────────────────────────── -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
