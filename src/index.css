@@ -1,30 +1,24 @@
-/* ── VARIABLES ─────────────────────────────────── */
 :root {
-  --or:        #D4AF37;
-  --or-clair:  #EDD06A;
-  --or-sombre: #A88820;
-  --onyx:      #0A0A0A;
-  --onyx-doux: #111108;
-  --encre:     #1A1408;
-  --creme:     #FAF4EC;
-  --ivoire:    #F0E8D6;
-  --pierre:    #8A7A62;
-  --sable:     #C8B898;
-  --serif:     'Cormorant Garamond', Georgia, serif;
-  --sans:      'Jost', Arial, sans-serif;
+  --or:       #D4AF37;
+  --or-l:     #EDD06A;
+  --or-d:     #A88820;
+  --onyx:     #0A0A0A;
+  --creme:    #FAF4EC;
+  --pierre:   #8A7A62;
+  --serif:    'Cormorant Garamond', Georgia, serif;
+  --sans:     'Jost', Arial, sans-serif;
 }
 
-/* ── RESET ─────────────────────────────────────── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html   { font-size: 16px; }
-body   { font-family: var(--sans); background: var(--onyx); color: var(--encre); overflow-x: hidden; }
-a      { text-decoration: none; color: inherit; }
-button { cursor: pointer; font-family: inherit; }
-img    { display: block; max-width: 100%; }
 
-/* ── UTILITAIRES ────────────────────────────────── */
-.sr-only {
-  position: absolute; width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden;
-  clip: rect(0,0,0,0); border: 0;
+html, body {
+  font-family: var(--sans);
+  background: var(--onyx);
+  overflow-x: hidden;
 }
+
+body { overscroll-behavior: none; }
+
+a { text-decoration: none; color: inherit; }
+
+#scroll-space { height: 500vh; position: relative; }
